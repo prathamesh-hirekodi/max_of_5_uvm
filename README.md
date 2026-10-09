@@ -24,7 +24,7 @@ sim/
 docs/
   TEST_PLAN.md            full plan (87 items)
   TEST_LIST.md            20-test list (directed + constrained random)
-  images/                 simulation screenshots
+  images/                 simulation log and waveform screenshots
 edaplayground/
   testbench.sv            all tb/ files merged into one (for EDA Playground)
   design.sv               copy of rtl/max_of_5.v
@@ -35,6 +35,12 @@ edaplayground/
 `max5_basic_test` passes on **Siemens Questa 2025.2** (UVM 1.2, EDA Playground): 8 scoreboard checks passed, 0 failed, 0 `UVM_ERROR` / `UVM_FATAL`.
 
 ![max5_basic_test passing on Siemens Questa in EDA Playground](docs/images/edaplayground_questa_pass.png)
+
+### Waveform
+
+EPWave view of `max5_basic_test`. After `rst_n` is released, `streaming_in` steps through `3 10 4 7 2 12 13 1` while `in_valid` is high. One cycle later `out_valid` rises, `data_out` repeats each sample, and `max_of_5` shows `3 10 10 10 10 12 13 13`. The window registers `win0`–`win3` show the last 4 samples shifting through.
+
+![EPWave waveform of max5_basic_test](docs/images/epwave_basic_test.png)
 
 ## Testbench architecture
 ```
