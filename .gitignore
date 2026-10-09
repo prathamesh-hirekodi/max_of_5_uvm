@@ -1,0 +1,12 @@
+# simulator outputs
+sim/work/
+sim/qrun.out/
+sim/simv*
+sim/csrc/
+sim/xcelium.d/
+sim/*.log
+sim/*.vcd
+sim/*.key
+sim/transcript
+*.wlf
+.DS_Store
